@@ -71,5 +71,12 @@ namespace gym_c__thing.MemberPortal
         {
             sidebarTimer.Start();
         }
+
+        private void btn_menu_logout_Click(object sender, EventArgs e)
+        {
+            memberLogin.instnace.Close();
+            this.Close();
+            Form1.instance.Show();
+        }
     }
 }
