@@ -32,5 +32,24 @@ namespace gym_c__thing.Classes
                 return count > 0;
             }
         }
+
+        public (string, string) GetMemberInfo(string username)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Username, MemberType FROM MemberInfo WHERE Username = @Username";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Username", username);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                string usrnameReturn = reader.GetString(0);
+                string memberTypeReturn = reader.GetString(1);
+                connection.Close();
+
+                return (usrnameReturn, memberTypeReturn);
+            }
+        }
     }
 }
