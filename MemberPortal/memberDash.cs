@@ -14,6 +14,7 @@ namespace gym_c__thing.MemberPortal
 {
     public partial class memberDash : Form
     {
+        bool sidebarExpand;
         public memberDash()
         {
             InitializeComponent();
@@ -44,9 +45,31 @@ namespace gym_c__thing.MemberPortal
             lbl_memberType.Text = memberType;
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void sidebarTimer_Tick(object sender, EventArgs e)
         {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sidebarTimer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    sidebarTimer.Stop();
+                }
+            }
+        }
 
+        private void btn_menu_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
         }
     }
 }
