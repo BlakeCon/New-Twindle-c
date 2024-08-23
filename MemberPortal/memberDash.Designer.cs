@@ -53,7 +53,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_menu_events = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btn_menu_logout = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
@@ -225,7 +225,7 @@
             this.sidebar.MaximumSize = new System.Drawing.Size(268, 680);
             this.sidebar.MinimumSize = new System.Drawing.Size(77, 680);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(77, 680);
+            this.sidebar.Size = new System.Drawing.Size(268, 680);
             this.sidebar.TabIndex = 2;
             // 
             // panel3
@@ -298,26 +298,27 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.btn_menu_events);
             this.panel5.Location = new System.Drawing.Point(3, 202);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(265, 70);
             this.panel5.TabIndex = 5;
             // 
-            // button2
+            // btn_menu_events
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(-4, -6);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(282, 85);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Events";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_menu_events.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_menu_events.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_menu_events.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_events.Image = ((System.Drawing.Image)(resources.GetObject("btn_menu_events.Image")));
+            this.btn_menu_events.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_menu_events.Location = new System.Drawing.Point(-4, -6);
+            this.btn_menu_events.Name = "btn_menu_events";
+            this.btn_menu_events.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_menu_events.Size = new System.Drawing.Size(282, 85);
+            this.btn_menu_events.TabIndex = 4;
+            this.btn_menu_events.Text = "Events";
+            this.btn_menu_events.UseVisualStyleBackColor = false;
+            this.btn_menu_events.Click += new System.EventHandler(this.btn_menu_events_Click);
             // 
             // panel6
             // 
@@ -400,7 +401,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox btn_menu;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_menu_events;
         private System.Windows.Forms.Button btn_menu_logout;
         private System.Windows.Forms.Timer sidebarTimer;
         private System.Windows.Forms.Button button4;

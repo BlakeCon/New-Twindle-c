@@ -31,5 +31,12 @@ namespace gym_c__thing
             memberlogin.Show();
             this.Hide();
         }
+
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+            memberRegistercs memberRegistercs = new memberRegistercs();
+            memberRegistercs.Show();
+            this.Hide();
+        }
     }
 }

@@ -51,5 +51,38 @@ namespace gym_c__thing.Classes
                 return (usrnameReturn, memberTypeReturn);
             }
         }
+        public List<List<string>> GetEvents()
+        {
+            List<List<string>> events = new List<List<string>>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM Events";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    List<string> eventData = new List<string>();
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        if (!reader.IsDBNull(i))
+                        {
+                            eventData.Add(reader[i].ToString());
+                        }
+                        else
+                        {
+                            eventData.Add(string.Empty);
+                        }
+                    }
+                    events.Add(eventData);
+                }
+                connection.Close();
+            }
+            return events;
+        }
+
     }
 }

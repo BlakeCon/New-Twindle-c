@@ -78,5 +78,12 @@ namespace gym_c__thing.MemberPortal
             this.Close();
             Form1.instance.Show();
         }
+
+        private void btn_menu_events_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            memberEvents memberEvents = new memberEvents();
+            memberEvents.Show();
+        }
     }
 }

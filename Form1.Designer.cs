@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.btn_memLogin = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_register = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -57,15 +57,16 @@
             this.btn_memLogin.UseVisualStyleBackColor = false;
             this.btn_memLogin.Click += new System.EventHandler(this.btn_memLogin_Click);
             // 
-            // button1
+            // btn_register
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(585, 317);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(304, 166);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Member Login";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_register.BackColor = System.Drawing.Color.Transparent;
+            this.btn_register.Location = new System.Drawing.Point(585, 317);
+            this.btn_register.Name = "btn_register";
+            this.btn_register.Size = new System.Drawing.Size(304, 166);
+            this.btn_register.TabIndex = 2;
+            this.btn_register.Text = "Register Today!";
+            this.btn_register.UseVisualStyleBackColor = false;
+            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // label2
             // 
@@ -86,7 +87,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_register);
             this.Controls.Add(this.btn_memLogin);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
@@ -100,7 +101,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_memLogin;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_register;
         private System.Windows.Forms.Label label2;
     }
 }

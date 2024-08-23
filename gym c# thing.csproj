@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\dbManager.cs" />
+    <Compile Include="Classes\dbRegistrationManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,11 +63,23 @@
     <Compile Include="Logins\memberLogin.Designer.cs">
       <DependentUpon>memberLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logins\memberRegistercs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logins\memberRegistercs.Designer.cs">
+      <DependentUpon>memberRegistercs.cs</DependentUpon>
+    </Compile>
     <Compile Include="MemberPortal\memberDash.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MemberPortal\memberDash.Designer.cs">
       <DependentUpon>memberDash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPortal\memberEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberPortal\memberEvents.Designer.cs">
+      <DependentUpon>memberEvents.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,8 +89,14 @@
     <EmbeddedResource Include="Logins\memberLogin.resx">
       <DependentUpon>memberLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logins\memberRegistercs.resx">
+      <DependentUpon>memberRegistercs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MemberPortal\memberDash.resx">
       <DependentUpon>memberDash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberPortal\memberEvents.resx">
+      <DependentUpon>memberEvents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
