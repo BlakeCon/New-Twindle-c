@@ -40,14 +40,14 @@ namespace gym_c__thing.Logins
             {
                 MessageBox.Show("Registration successful!");
 
-                var smtpClient = new SmtpClient("smtp.gmail.com")
-                {
-                    Port = 587,
-                    Credentials = new NetworkCredential("collegeexperiements@gmail.com", "Connor1202"),
-                    EnableSsl = true,
-                };
+                //var smtpClient = new SmtpClient("smtp.gmail.com")
+               // {
+                   // Port = 587,
+                  //  Credentials = new NetworkCredential("collegeexperiements@gmail.com", "Connor1202"),
+                   // EnableSsl = true,
+               // };
 
-                smtpClient.Send("collegeexperiements@gmail.com", email, "Thanks for registering!", "Thanks for registering to Twindle Gyms!");
+                //smtpClient.Send("collegeexperiements@gmail.com", email, "Thanks for registering!", "Thanks for registering to Twindle Gyms!");
 
                 this.Close();
                 memberLogin memberLogin = new memberLogin();
@@ -57,6 +57,11 @@ namespace gym_c__thing.Logins
             {
                 MessageBox.Show("Registration failed!");
             }
+        }
+
+        private void memberRegistercs_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

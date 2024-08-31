@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(memberEvents));
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_menu = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_home = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_menu_events = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btn_menu_logout = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_menu)).BeginInit();
@@ -93,30 +95,32 @@
             this.btn_menu.Size = new System.Drawing.Size(45, 45);
             this.btn_menu.TabIndex = 0;
             this.btn_menu.TabStop = false;
+            this.btn_menu.Click += new System.EventHandler(this.btn_menu_Click);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.btn_home);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Location = new System.Drawing.Point(3, 126);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(265, 70);
             this.panel4.TabIndex = 4;
             // 
-            // button4
+            // btn_home
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-9, -7);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(282, 85);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Home";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_home.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_home.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_home.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
+            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_home.Location = new System.Drawing.Point(-9, -7);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_home.Size = new System.Drawing.Size(282, 85);
+            this.btn_home.TabIndex = 4;
+            this.btn_home.Text = "Home";
+            this.btn_home.UseVisualStyleBackColor = false;
+            this.btn_home.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -177,6 +181,7 @@
             this.btn_menu_logout.TabIndex = 5;
             this.btn_menu_logout.Text = "Log Out";
             this.btn_menu_logout.UseVisualStyleBackColor = false;
+            this.btn_menu_logout.Click += new System.EventHandler(this.btn_menu_logout_Click);
             // 
             // dataGridView1
             // 
@@ -186,14 +191,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(1116, 622);
             this.dataGridView1.TabIndex = 4;
             // 
+            // sidebarTimer
+            // 
+            this.sidebarTimer.Interval = 10;
+            this.sidebarTimer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // memberEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.sidebar);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "memberEvents";
             this.Text = "memberEvents";
             this.Load += new System.EventHandler(this.memberEvents_Load);
@@ -216,12 +226,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox btn_menu;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btn_menu_events;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btn_menu_logout;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Timer sidebarTimer;
     }
 }

@@ -15,9 +15,12 @@ namespace gym_c__thing.MemberPortal
     public partial class memberDash : Form
     {
         bool sidebarExpand;
+        public static memberDash instance;
+
         public memberDash()
         {
             InitializeComponent();
+            instance = this;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -37,6 +40,7 @@ namespace gym_c__thing.MemberPortal
 
 
             string username = memberLogin.instnace.usernameTxtBxt.Text;
+            memberLogin.instnace.Close();
             lbl_usrName.Text = username;
 
             dbManagerClass dbManagerClass = new dbManagerClass();
@@ -85,5 +89,6 @@ namespace gym_c__thing.MemberPortal
             memberEvents memberEvents = new memberEvents();
             memberEvents.Show();
         }
+
     }
 }

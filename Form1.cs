@@ -20,11 +20,6 @@ namespace gym_c__thing
             instance = this;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_memLogin_Click(object sender, EventArgs e)
         {
             memberLogin memberlogin = new memberLogin();
@@ -37,6 +32,18 @@ namespace gym_c__thing
             memberRegistercs memberRegistercs = new memberRegistercs();
             memberRegistercs.Show();
             this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_staff_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            staffLogin staffLogin = new staffLogin();
+            staffLogin.Show();
         }
     }
 }

@@ -148,6 +148,7 @@
             this.Controls.Add(this.txt_username);
             this.Name = "memberRegistercs";
             this.Text = "memberRegistercs";
+            this.Load += new System.EventHandler(this.memberRegistercs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

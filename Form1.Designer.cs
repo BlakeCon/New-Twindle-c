@@ -33,6 +33,7 @@
             this.btn_memLogin = new System.Windows.Forms.Button();
             this.btn_register = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_staff = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -44,12 +45,11 @@
             this.label1.Size = new System.Drawing.Size(717, 119);
             this.label1.TabIndex = 0;
             this.label1.Text = "TWINDLE GYM";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn_memLogin
             // 
             this.btn_memLogin.BackColor = System.Drawing.Color.Transparent;
-            this.btn_memLogin.Location = new System.Drawing.Point(231, 317);
+            this.btn_memLogin.Location = new System.Drawing.Point(217, 222);
             this.btn_memLogin.Name = "btn_memLogin";
             this.btn_memLogin.Size = new System.Drawing.Size(304, 166);
             this.btn_memLogin.TabIndex = 1;
@@ -60,7 +60,7 @@
             // btn_register
             // 
             this.btn_register.BackColor = System.Drawing.Color.Transparent;
-            this.btn_register.Location = new System.Drawing.Point(585, 317);
+            this.btn_register.Location = new System.Drawing.Point(449, 416);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(304, 166);
             this.btn_register.TabIndex = 2;
@@ -80,18 +80,31 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Welcome! Please select an option: ";
             // 
+            // btn_staff
+            // 
+            this.btn_staff.BackColor = System.Drawing.Color.Transparent;
+            this.btn_staff.Location = new System.Drawing.Point(602, 222);
+            this.btn_staff.Name = "btn_staff";
+            this.btn_staff.Size = new System.Drawing.Size(304, 166);
+            this.btn_staff.TabIndex = 4;
+            this.btn_staff.Text = "Staff Login";
+            this.btn_staff.UseVisualStyleBackColor = false;
+            this.btn_staff.Click += new System.EventHandler(this.btn_staff_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btn_staff);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_register);
             this.Controls.Add(this.btn_memLogin);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,6 +116,7 @@
         private System.Windows.Forms.Button btn_memLogin;
         private System.Windows.Forms.Button btn_register;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_staff;
     }
 }
 

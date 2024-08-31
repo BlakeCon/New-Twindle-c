@@ -41,6 +41,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
+            this.chbox_showPassword = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -68,6 +69,7 @@
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(312, 20);
             this.txt_password.TabIndex = 2;
+            this.txt_password.UseSystemPasswordChar = true;
             // 
             // btn_submit
             // 
@@ -157,12 +159,24 @@
             this.btn_back.UseVisualStyleBackColor = false;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
+            // chbox_showPassword
+            // 
+            this.chbox_showPassword.AutoSize = true;
+            this.chbox_showPassword.Location = new System.Drawing.Point(581, 330);
+            this.chbox_showPassword.Name = "chbox_showPassword";
+            this.chbox_showPassword.Size = new System.Drawing.Size(102, 17);
+            this.chbox_showPassword.TabIndex = 13;
+            this.chbox_showPassword.Text = "Show Password";
+            this.chbox_showPassword.UseVisualStyleBackColor = true;
+            this.chbox_showPassword.CheckedChanged += new System.EventHandler(this.chbox_showPassword_CheckedChanged);
+            // 
             // memberLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.chbox_showPassword);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.pictureBox3);
@@ -200,5 +214,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.CheckBox chbox_showPassword;
     }
 }

@@ -31,7 +31,8 @@ namespace gym_c__thing.Logins
             dbManagerClass dbManager = new dbManagerClass(); 
             bool credentialsMatch = dbManager.CompareCredentials(username, password);
             if (credentialsMatch) {
-                this.Hide();
+                this.Close();
+                dbManager.currentUser = username;
                 MemberPortal.memberDash memberDash = new MemberPortal.memberDash();
                 memberDash.Show();
                 password = null;
@@ -60,6 +61,19 @@ namespace gym_c__thing.Logins
         {
             this.Close();
             Form1.instance.Show();
+        }
+
+        private void chbox_showPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            bool check = chbox_showPassword.Checked;
+            if (check)
+            {
+                txt_password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txt_password.UseSystemPasswordChar = true;
+            }
         }
     }
 }

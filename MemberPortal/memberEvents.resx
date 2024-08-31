@@ -129,7 +129,7 @@
         TkSuQmCC
 </value>
   </data>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_home.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAxVJREFUaEPtl0uoTlEUxz/FwCNmIokJxQTJwMRAnjPkMTD0ymMiypxC0SWPhKHy
@@ -225,10 +225,13 @@
         AAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="sidebarTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAA/7JJREFUeF7s/eWC3cqybY2ud7rfOXtNUzEz44Bi8Pv/v61HRKZSMKjA9tzH4W6V
+        vwAADr8BOAVTJAAA/7JJREFUeF7s/eWC3cqybY2ud7rfOXtNUzEz44Bi8Pv/v61HRKZSMKjA9tzH4W6V
         WKnEaCNT0n++f4T9+BybK2x+OlsobHE6WypsuWUryVaTrSVbL2yjsM0ZbWsWi2MKi6uaRWjeZ3F7LYv7
         77KIo5WViDWziNP3WSSSWaTrwkIkdmGRS95kkdtmtMj6f5J9+2T7+tf+37NI+5ZFnhttFBE0lzTvmvvR
         1sL8XKnF+fnFhZqWFhc6tby4uLwkraDlJdfqyrJrbXUla31ttaGNtbWN9dDmxrpra3PDtb25ub0V2tne
