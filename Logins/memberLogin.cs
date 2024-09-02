@@ -31,8 +31,7 @@ namespace gym_c__thing.Logins
             dbManagerClass dbManager = new dbManagerClass(); 
             bool credentialsMatch = dbManager.CompareCredentials(username, password);
             if (credentialsMatch) {
-                this.Close();
-                dbManager.currentUser = username;
+                this.Hide();
                 MemberPortal.memberDash memberDash = new MemberPortal.memberDash();
                 memberDash.Show();
                 password = null;

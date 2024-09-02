@@ -54,5 +54,55 @@ namespace gym_c__thing.Classes
                 return (nameReturn, posReturn, makeEventsReturn, superUserReturn);
             }
         }
+
+        public int getLatesEventID()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT MAX(Id) FROM Events";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                connection.Open();
+                int latestID = (int)command.ExecuteScalar();
+                connection.Close();
+
+                return latestID;
+            }
+        }
+
+        public bool RemoveEvent(int Id) {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Events WHERE Id = @ID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID", Id);
+
+                connection.Open();
+                int count = command.ExecuteNonQuery();
+                connection.Close();
+
+                return count > 0;
+            }
+        }
+
+        public bool AddEvent(int Id, string name, string info, string expiry) {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO Events (Id, EventName, EventInfo, expiry) VALUES (@ID, @Name, @Info, @Expiry)";
+                SqlCommand command = new SqlCommand(query, connection);
+                
+                command.Parameters.AddWithValue("@ID", Id);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Info", info);
+                command.Parameters.AddWithValue("@Expiry", expiry);
+                
+                connection.Open();
+                int count = command.ExecuteNonQuery();
+                connection.Close();
+                
+                return count > 0;
+
+            }
+        }
     }
 }

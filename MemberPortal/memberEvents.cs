@@ -23,8 +23,10 @@ namespace gym_c__thing.MemberPortal
 
         private void memberEvents_Load(object sender, EventArgs e)
         {
-            dataGridView1.Columns.Add("Column1", "Column 1");
-            dataGridView1.Columns.Add("Column2", "Column 2");
+            dataGridView1.Columns.Add("Column1", "Event ID");
+            dataGridView1.Columns.Add("Column2", "Event Name");
+            dataGridView1.Columns.Add("Column3", "Event Info");
+            dataGridView1.Columns.Add("Column4", "Expiry");
             
 
             dbManagerClass dbManager = new dbManagerClass();
@@ -34,6 +36,8 @@ namespace gym_c__thing.MemberPortal
             {
                 string column1Value = eventData[0];
                 string column2Value = eventData[1];
+                string column3Value = eventData[2];
+                string column4Value = eventData[3];
 
                 dataGridView1.Rows.Add(column1Value, column2Value);
             }
