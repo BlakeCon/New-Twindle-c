@@ -35,11 +35,11 @@ namespace gym_c__thing.Classes
             }
         }
 
-        public (string, string) GetMemberInfo(string username)
+        public (string, string, string) GetMemberInfo(string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT Username, MemberType FROM MemberInfo WHERE Username = @Username";
+                string query = "SELECT Username, MemberType, Id FROM MemberInfo WHERE Username = @Username";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Username", username);
 
@@ -48,11 +48,33 @@ namespace gym_c__thing.Classes
                 reader.Read();
                 string usrnameReturn = reader.GetString(0);
                 string memberTypeReturn = reader.GetString(1);
+                int idReturn = reader.GetInt32(2);
                 connection.Close();
 
-                return (usrnameReturn, memberTypeReturn);
+                return (usrnameReturn, memberTypeReturn, idReturn);
             }
         }
+
+        //public (string, string, string) GetIdMemberInfo(string username)
+        //{
+           // using (SqlConnection connection = new SqlConnection(connectionString))
+          //  {
+             //   string query = "SELECT Username, MemberType, Id FROM MemberInfo WHERE Username = @Username";
+             //   SqlCommand command = new SqlCommand(query, connection);
+             //   command.Parameters.AddWithValue("@Username", username);
+
+             //   connection.Open();
+             //   SqlDataReader reader = command.ExecuteReader();
+             //   reader.Read();
+             //   string usrnameReturn = reader.GetString(0);
+             //   string memberTypeReturn = reader.GetString(1);
+             //   string idReturn = reader.GetString(2);
+             //  connection.Close();
+
+             //  return (usrnameReturn, memberTypeReturn, idReturn);
+            //}
+        //}
+
         public List<List<string>> GetEvents()
         {
             List<List<string>> events = new List<List<string>>();

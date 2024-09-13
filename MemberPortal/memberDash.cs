@@ -44,7 +44,7 @@ namespace gym_c__thing.MemberPortal
             lbl_usrName.Text = username;
 
             dbManagerClass dbManagerClass = new dbManagerClass();
-            (string usrNotused, string memberType) = dbManagerClass.GetMemberInfo(username);
+            (string usrNotused, string memberType, int id) = dbManagerClass.GetMemberInfo(username);
 
             lbl_memberType.Text = memberType;
         }

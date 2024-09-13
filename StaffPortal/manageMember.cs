@@ -16,5 +16,15 @@ namespace gym_c__thing.StaffPortal
         {
             InitializeComponent();
         }
+
+        private void btn_idSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manageMember_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

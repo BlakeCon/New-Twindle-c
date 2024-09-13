@@ -27,7 +27,7 @@ namespace gym_c__thing.StaffPortal
 
         private void staffDash_Load(object sender, EventArgs e)
         {
-            //Adding all user details to the bottom 
+            //Adding all user details to the bottom using concatination 
 
             staffDbManager dbManager = new staffDbManager();
 
