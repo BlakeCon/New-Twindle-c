@@ -35,11 +35,11 @@ namespace gym_c__thing.Classes
             }
         }
 
-        public (string, string, string) GetMemberInfo(string username)
+        public (string, string, string, string, int) GetMemberInfoUsername(string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT Username, MemberType, Id FROM MemberInfo WHERE Username = @Username";
+                string query = "SELECT Username, MemberType, Email, Name, Id FROM MemberInfo WHERE Username = @Username";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Username", username);
 
@@ -48,32 +48,58 @@ namespace gym_c__thing.Classes
                 reader.Read();
                 string usrnameReturn = reader.GetString(0);
                 string memberTypeReturn = reader.GetString(1);
-                int idReturn = reader.GetInt32(2);
+                string emailReturn = reader.GetString(2);
+                string nameReturn = reader.GetString(3);
+                int idReturn = reader.GetInt32(4);
                 connection.Close();
 
-                return (usrnameReturn, memberTypeReturn, idReturn);
+                return (usrnameReturn, memberTypeReturn, emailReturn, nameReturn, idReturn);
             }
         }
 
-        //public (string, string, string) GetIdMemberInfo(string username)
-        //{
-           // using (SqlConnection connection = new SqlConnection(connectionString))
-          //  {
-             //   string query = "SELECT Username, MemberType, Id FROM MemberInfo WHERE Username = @Username";
-             //   SqlCommand command = new SqlCommand(query, connection);
-             //   command.Parameters.AddWithValue("@Username", username);
+        public (string, string, string, string, int) GetMemberInfoId(int Id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Username, MemberType, Email, Name, Id FROM MemberInfo WHERE Id = @Id";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Id", Id);
 
-             //   connection.Open();
-             //   SqlDataReader reader = command.ExecuteReader();
-             //   reader.Read();
-             //   string usrnameReturn = reader.GetString(0);
-             //   string memberTypeReturn = reader.GetString(1);
-             //   string idReturn = reader.GetString(2);
-             //  connection.Close();
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                string usrnameReturn = reader.GetString(0);
+                string memberTypeReturn = reader.GetString(1);
+                string emailReturn = reader.GetString(2);
+                string nameReturn = reader.GetString(3);
+                int idReturn = reader.GetInt32(4);
+                connection.Close();
 
-             //  return (usrnameReturn, memberTypeReturn, idReturn);
-            //}
-        //}
+                return (usrnameReturn, memberTypeReturn, emailReturn, nameReturn, idReturn);
+            }
+        }
+
+        public (string, string, string, string, int) GetMemberInfoName(string name)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Username, MemberType, Email, Name, Id FROM MemberInfo WHERE Name = @Name";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Name", name);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                string usrnameReturn = reader.GetString(0);
+                string memberTypeReturn = reader.GetString(1);
+                string emailReturn = reader.GetString(2);
+                string nameReturn = reader.GetString(3);
+                int idReturn = reader.GetInt32(4);
+                connection.Close();
+
+                return (usrnameReturn, memberTypeReturn, emailReturn, nameReturn, idReturn);
+            }
+        }
 
         public List<List<string>> GetEvents()
         {

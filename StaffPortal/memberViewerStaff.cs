@@ -8,28 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace gym_c__thing.StaffPortal
 {
-    public partial class manageMember : Form
+    public partial class memberViewerStaff : Form
     {
-        public manageMember()
+        public memberViewerStaff()
         {
             InitializeComponent();
         }
 
-        private void btn_idSearch_Click(object sender, EventArgs e)
+        private void memberViewerStaff_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void manageMember_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_submit_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
