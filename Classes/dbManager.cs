@@ -16,8 +16,6 @@ namespace gym_c__thing.Classes
             connectionString = "Data Source=localhost;Initial Catalog=newTwindleDB;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; // Initialize the connection string here
         }
 
-        public string currentUser;
-
         public bool CompareCredentials(string username, string password)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

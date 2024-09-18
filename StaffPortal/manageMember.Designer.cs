@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_searchUsrname = new System.Windows.Forms.Button();
+            this.btn_usrnameSearch = new System.Windows.Forms.Button();
+            this.btn_nameSearch = new System.Windows.Forms.Button();
             this.btn_idSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btn_searchUsrname);
+            this.panel1.Controls.Add(this.btn_usrnameSearch);
+            this.panel1.Controls.Add(this.btn_nameSearch);
             this.panel1.Controls.Add(this.btn_idSearch);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_search);
@@ -53,15 +53,27 @@
             this.panel1.Size = new System.Drawing.Size(1203, 622);
             this.panel1.TabIndex = 3;
             // 
-            // btn_searchUsrname
+            // btn_usrnameSearch
             // 
-            this.btn_searchUsrname.Location = new System.Drawing.Point(471, 340);
-            this.btn_searchUsrname.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_searchUsrname.Name = "btn_searchUsrname";
-            this.btn_searchUsrname.Size = new System.Drawing.Size(171, 72);
-            this.btn_searchUsrname.TabIndex = 16;
-            this.btn_searchUsrname.Text = "Search Name";
-            this.btn_searchUsrname.UseVisualStyleBackColor = true;
+            this.btn_usrnameSearch.Location = new System.Drawing.Point(646, 340);
+            this.btn_usrnameSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_usrnameSearch.Name = "btn_usrnameSearch";
+            this.btn_usrnameSearch.Size = new System.Drawing.Size(171, 72);
+            this.btn_usrnameSearch.TabIndex = 17;
+            this.btn_usrnameSearch.Text = "Seach Username";
+            this.btn_usrnameSearch.UseVisualStyleBackColor = true;
+            this.btn_usrnameSearch.Click += new System.EventHandler(this.btn_usrnameSearch_Click);
+            // 
+            // btn_nameSearch
+            // 
+            this.btn_nameSearch.Location = new System.Drawing.Point(471, 340);
+            this.btn_nameSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_nameSearch.Name = "btn_nameSearch";
+            this.btn_nameSearch.Size = new System.Drawing.Size(171, 72);
+            this.btn_nameSearch.TabIndex = 16;
+            this.btn_nameSearch.Text = "Search Name";
+            this.btn_nameSearch.UseVisualStyleBackColor = true;
+            this.btn_nameSearch.Click += new System.EventHandler(this.btn_nameSearch_Click);
             // 
             // btn_idSearch
             // 
@@ -112,16 +124,6 @@
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(646, 340);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 72);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Seach Username";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // manageMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,7 +134,6 @@
             this.Controls.Add(this.btn_back);
             this.Name = "manageMember";
             this.Text = "manageMember";
-            this.Load += new System.EventHandler(this.manageMember_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -145,8 +146,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btn_searchUsrname;
+        private System.Windows.Forms.Button btn_nameSearch;
         private System.Windows.Forms.Button btn_idSearch;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_usrnameSearch;
     }
 }
