@@ -32,12 +32,13 @@ namespace gym_c__thing.StaffPortal
             MessageBox.Show("This wont work yet, need to Parse it as an int lol");
             int Id = 0;
             //Returns the username, memberType, email, name and id of the member using the id
-            (string username, string memberType, string email, string name, int idReturner) = dbManagerClass.GetMemberInfoId(Id);
+            
         }
 
         private void btn_nameSearch_Click(object sender, EventArgs e)
         {
             searchMethod = "name";
+            string name = txt_search.Text;
             dbManagerClass dbManagerClass = new dbManagerClass();
             //Returns the username, memberType, email, name and id of the member using the name
             (string usrNotused, string memberType, string email, string nameReturner, int id) = dbManagerClass.GetMemberInfoName(name);
@@ -46,6 +47,7 @@ namespace gym_c__thing.StaffPortal
         private void btn_usrnameSearch_Click(object sender, EventArgs e)
         {
             searchMethod = "username";
+            string username = txt_search.Text;
             dbManagerClass dbManagerClass = new dbManagerClass();
             //Returns the username, memberType, email, name and id of the member using the username
             (string usernameReturner, string memberType, string email, string name, int id) = dbManagerClass.GetMemberInfoUsername(username);
