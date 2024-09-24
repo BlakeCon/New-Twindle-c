@@ -25,16 +25,37 @@ namespace gym_c__thing.StaffPortal
         {
             string searchMethod = manageMember.instance.searchMethod;
             string search = manageMember.instance.searchBox.Text;
+            string email = null;
+            string username = null;
+            string memberType = null;
+            string name = null;
+            int id = 0;
+            
+
             dbManagerClass dbManagerClass = new dbManagerClass();
             if (searchMethod == "name")
+            {
                 //Returns the username, memberType, email, name and id of the member using the name
-                (string usrNotused, string memberType, string email, string nameReturner, int id) = dbManagerClass.GetMemberInfoName(search);
+                (username, memberType, email, name, id) = dbManagerClass.GetMemberInfoName(search);
+            }
+                
             if (searchMethod == "id")
+            {
                 //Returns the username, memberType, email, name and id of the member using the id
-                (string username, string memberType, string email, string name, int idReturner) = dbManagerClass.GetMemberInfoId(Int32.Parse(search));
+                (username, memberType, email, name, id) = dbManagerClass.GetMemberInfoId(Int32.Parse(search));
+            }
+                
             if (searchMethod == "username")
+            {
                 //Returns the username, memberType, email, name and id of the member using the username
-                (string usernameReturner, string memberType, string email, string name, int id) = dbManagerClass.GetMemberInfoUsername(search);
+                (username, memberType, email, name, id) = dbManagerClass.GetMemberInfoUsername(search);
+            }
+                
+            txt_email.Text = email;
+            txt_id.Text = id.ToString();
+            txt_name.Text = name;
+            txt_memberType.Text = memberType;
+            txt_usrname.Text = username;
 
         }
     }

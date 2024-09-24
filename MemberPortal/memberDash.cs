@@ -16,11 +16,13 @@ namespace gym_c__thing.MemberPortal
     {
         bool sidebarExpand;
         public static memberDash instance;
+        public string username;
 
         public memberDash()
         {
             InitializeComponent();
             instance = this;
+            username = string.Empty;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace gym_c__thing.MemberPortal
 
 
 
-            string username = memberLogin.instnace.usernameTxtBxt.Text;
+            username = memberLogin.instnace.usernameTxtBxt.Text;
             memberLogin.instnace.Close();
             lbl_usrName.Text = username;
 
@@ -49,11 +51,11 @@ namespace gym_c__thing.MemberPortal
             lbl_memberType.Text = memberType;
             lbl_ID.Text = id.ToString();
 
-            if (email == "Email not avalible") ;
+            if (email == "Email not avalible") 
             {
                 MessageBox.Show("Remember to add your Email by using the 'Billing' page or asking a staff member!", "Missing Email!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            if (name == "Name not avalible") ;
+            if (name == "Name not avalible") 
             {
                 MessageBox.Show("Remember to add your Name by using the 'Billing' page or asking a staff member!", "Missing Name!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
