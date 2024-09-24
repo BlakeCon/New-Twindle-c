@@ -47,6 +47,17 @@ namespace gym_c__thing.MemberPortal
             (string usrNotused, string memberType, string email, string name, int id) = dbManagerClass.GetMemberInfoUsername(username);
 
             lbl_memberType.Text = memberType;
+            lbl_ID.Text = id.ToString();
+
+            if (email == "Email not avalible") ;
+            {
+                MessageBox.Show("Remember to add your Email by using the 'Billing' page or asking a staff member!", "Missing Email!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            if (name == "Name not avalible") ;
+            {
+                MessageBox.Show("Remember to add your Name by using the 'Billing' page or asking a staff member!", "Missing Name!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            }
         }
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
