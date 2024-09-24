@@ -76,6 +76,12 @@
     <Compile Include="Logins\staffLogin.Designer.cs">
       <DependentUpon>staffLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MemberPortal\memberBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberPortal\memberBilling.Designer.cs">
+      <DependentUpon>memberBilling.cs</DependentUpon>
+    </Compile>
     <Compile Include="MemberPortal\memberDash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logins\staffLogin.resx">
       <DependentUpon>staffLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberPortal\memberBilling.resx">
+      <DependentUpon>memberBilling.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberPortal\memberDash.resx">
       <DependentUpon>memberDash.cs</DependentUpon>

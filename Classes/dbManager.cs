@@ -46,8 +46,8 @@ namespace gym_c__thing.Classes
                 reader.Read();
                 string usrnameReturn = reader.GetString(0);
                 string memberTypeReturn = reader.GetString(1);
-                string emailReturn = reader.GetString(2);
-                string nameReturn = reader.GetString(3);
+                string emailReturn = reader.IsDBNull(2) ? "Email not available" : reader.GetString(2);
+                string nameReturn = reader.IsDBNull(3) ? "Name not available" : reader.GetString(3);
                 int idReturn = reader.GetInt32(4);
                 connection.Close();
 

@@ -90,5 +90,11 @@ namespace gym_c__thing.MemberPortal
             memberEvents.Show();
         }
 
+        private void btn_billing_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            memberBilling memberBilling = new memberBilling();
+            memberBilling.Show();
+        }
     }
 }
