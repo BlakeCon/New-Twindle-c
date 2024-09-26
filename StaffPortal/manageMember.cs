@@ -39,6 +39,11 @@ namespace gym_c__thing.StaffPortal
         {
             searchMethod = "name";
             string name = txt_search.Text;
+            if(name == "")
+            {
+                MessageBox.Show("Please enter a name to search for");
+                return;
+            }
             dbManagerClass dbManagerClass = new dbManagerClass();
             //Returns the username, memberType, email, name and id of the member using the name
             (string usrNotused, string memberType, string email, string nameReturner, int id) = dbManagerClass.GetMemberInfoName(name);
@@ -46,11 +51,22 @@ namespace gym_c__thing.StaffPortal
 
         private void btn_usrnameSearch_Click(object sender, EventArgs e)
         {
+
             searchMethod = "username";
             string username = txt_search.Text;
+            if (username == "")
+            {
+                MessageBox.Show("Please enter a name to search for");
+                return;
+            }
             dbManagerClass dbManagerClass = new dbManagerClass();
             //Returns the username, memberType, email, name and id of the member using the username
             (string usernameReturner, string memberType, string email, string name, int id) = dbManagerClass.GetMemberInfoUsername(username);
+        }
+
+        private void manageMember_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

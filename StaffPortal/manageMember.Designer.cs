@@ -134,6 +134,7 @@
             this.Controls.Add(this.btn_back);
             this.Name = "manageMember";
             this.Text = "manageMember";
+            this.Load += new System.EventHandler(this.manageMember_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
