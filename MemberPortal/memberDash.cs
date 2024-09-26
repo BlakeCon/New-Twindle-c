@@ -17,6 +17,9 @@ namespace gym_c__thing.MemberPortal
         bool sidebarExpand;
         public static memberDash instance;
         public string username;
+        public int membersInGym;
+        public bool startingNumber;
+        public bool checkedInGym;
 
         public memberDash()
         {
@@ -33,11 +36,11 @@ namespace gym_c__thing.MemberPortal
         private void memberDash_Load(object sender, EventArgs e)
         {
 
-            //random number
+            //Generates a random starting number for the progress bar
             Random random = new Random();
             int randomNumber = random.Next(101);
-            lbl_noInGym.Text = randomNumber.ToString();
-            progressBar1.Value = randomNumber;
+            progressBarUpdate(randomNumber);
+            
 
 
 
@@ -60,6 +63,21 @@ namespace gym_c__thing.MemberPortal
                 MessageBox.Show("Remember to add your Name by using the 'Billing' page or asking a staff member!", "Missing Name!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             }
+        }
+
+        private void progressBarUpdate(int value)
+        {
+            if (value > 90)
+            {
+                progressBar1.BackColor = Color.Yellow;
+            }
+            if (value > 99)
+            {
+                progressBar1.BackColor = Color.Red;
+            }
+            lbl_noInGym.Text = value.ToString();
+            progressBar1.Value = value;
+            membersInGym = value;
         }
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
@@ -91,6 +109,15 @@ namespace gym_c__thing.MemberPortal
 
         private void btn_menu_logout_Click(object sender, EventArgs e)
         {
+            if (checkedInGym)
+            {
+                DialogResult result = MessageBox.Show("Do you want to check out?", "Check Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    progressBarUpdate(membersInGym - 1);
+                    checkedInGym = false;
+                }
+            }
             memberLogin.instnace.Close();
             this.Close();
             Form1.instance.Show();
@@ -108,6 +135,33 @@ namespace gym_c__thing.MemberPortal
             this.Hide();
             memberBilling memberBilling = new memberBilling();
             memberBilling.Show();
+        }
+
+        private void btn_checkIn_Click(object sender, EventArgs e)
+        {
+            if (checkedInGym)
+            {
+                MessageBox.Show("You're already checked in!", "Checked In", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if(membersInGym == 100)
+            {
+                MessageBox.Show("The gym is currently at capasity! Please come back later", "Gym Full!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            progressBarUpdate(membersInGym + 1);
+            checkedInGym = true;
+        }
+
+        private void btn_checkOut_Click(object sender, EventArgs e)
+        {
+            if (!checkedInGym)
+            {
+                MessageBox.Show("You're not checked in!", "Not Checked In", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            progressBarUpdate(membersInGym - 1);
+            checkedInGym = false;
         }
     }
 }
