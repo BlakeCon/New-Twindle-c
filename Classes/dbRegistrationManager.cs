@@ -32,16 +32,53 @@ namespace gym_c__thing.Classes
             }
         }
 
+        public bool UsernameExists(string username)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM MemberLogin WHERE Username = @username";
+                SqlCommand command = new SqlCommand(query,connection);
+                try
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@username", username);
+                    int result = (int)command.ExecuteScalar();
+                    connection.Close();
+                    if (result == 0)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error has occured with the database: ", ex.Message);
+                    return true;
+                }
+
+            }
+        }
+
         public bool RegisterUser(string username, string email, string password, string memberType)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                
+                if(UsernameExists(username)) 
+                {
+                    MessageBox.Show("Username already exists!");
+                    return false;
+                }
+
                 int latestID = getLatestID();
                 latestID = latestID + 1;
-                string querydb1 = "INSERT INTO MemberInfo (Id, Username, MemberType, Email) VALUES (@memberID, @username, @memberType, @Email)";
-                string querydb2 = "INSERT INTO MemberLogin (Id, Username, Password) VALUES (@memberID, @username, @password)";
-                SqlCommand command1 = new SqlCommand(querydb1, connection);
-                SqlCommand command2 = new SqlCommand(querydb2, connection);
+                string query1 = "INSERT INTO MemberInfo (Id, Username, MemberType, Email) VALUES (@memberID, @username, @memberType, @Email)";
+                string query2 = "INSERT INTO MemberLogin (Id, Username, Password) VALUES (@memberID, @username, @password)";
+                SqlCommand command1 = new SqlCommand(query1, connection);
+                SqlCommand command2 = new SqlCommand(query2, connection);
                 
                 try
                     {
