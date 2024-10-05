@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.btn_memLogin = new System.Windows.Forms.Button();
+            this.btn_memberLogin = new System.Windows.Forms.Button();
             this.btn_register = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_staff = new System.Windows.Forms.Button();
+            this.btn_staffLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_memLogin
+            // btn_memberLogin
             // 
-            this.btn_memLogin.BackColor = System.Drawing.Color.Transparent;
-            this.btn_memLogin.Location = new System.Drawing.Point(77, 311);
-            this.btn_memLogin.Name = "btn_memLogin";
-            this.btn_memLogin.Size = new System.Drawing.Size(304, 166);
-            this.btn_memLogin.TabIndex = 1;
-            this.btn_memLogin.Text = "Member Login";
-            this.btn_memLogin.UseVisualStyleBackColor = false;
-            this.btn_memLogin.Click += new System.EventHandler(this.btn_memLogin_Click);
+            this.btn_memberLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btn_memberLogin.Location = new System.Drawing.Point(77, 311);
+            this.btn_memberLogin.Name = "btn_memberLogin";
+            this.btn_memberLogin.Size = new System.Drawing.Size(304, 166);
+            this.btn_memberLogin.TabIndex = 1;
+            this.btn_memberLogin.Text = "Member Login";
+            this.btn_memberLogin.UseVisualStyleBackColor = false;
+            this.btn_memberLogin.Click += new System.EventHandler(this.btn_memLogin_Click);
             // 
             // btn_register
             // 
@@ -71,16 +71,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Welcome! Please select an option: ";
             // 
-            // btn_staff
+            // btn_staffLogin
             // 
-            this.btn_staff.BackColor = System.Drawing.Color.Transparent;
-            this.btn_staff.Location = new System.Drawing.Point(869, 311);
-            this.btn_staff.Name = "btn_staff";
-            this.btn_staff.Size = new System.Drawing.Size(304, 166);
-            this.btn_staff.TabIndex = 4;
-            this.btn_staff.Text = "Staff Login";
-            this.btn_staff.UseVisualStyleBackColor = false;
-            this.btn_staff.Click += new System.EventHandler(this.btn_staff_Click);
+            this.btn_staffLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btn_staffLogin.Location = new System.Drawing.Point(869, 311);
+            this.btn_staffLogin.Name = "btn_staffLogin";
+            this.btn_staffLogin.Size = new System.Drawing.Size(304, 166);
+            this.btn_staffLogin.TabIndex = 4;
+            this.btn_staffLogin.Text = "Staff Login";
+            this.btn_staffLogin.UseVisualStyleBackColor = false;
+            this.btn_staffLogin.Click += new System.EventHandler(this.btn_staff_Click);
             // 
             // pictureBox1
             // 
@@ -99,10 +99,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btn_staff);
+            this.Controls.Add(this.btn_staffLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_register);
-            this.Controls.Add(this.btn_memLogin);
+            this.Controls.Add(this.btn_memberLogin);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -113,10 +113,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_memLogin;
+        private System.Windows.Forms.Button btn_memberLogin;
         private System.Windows.Forms.Button btn_register;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_staff;
+        private System.Windows.Forms.Button btn_staffLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

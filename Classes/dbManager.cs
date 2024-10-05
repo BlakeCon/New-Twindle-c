@@ -132,5 +132,23 @@ namespace gym_c__thing.Classes
             return events;
         }
 
+        public (string, string) getHours(string day)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT OpeningTime, ClosingTime FROM HoursOfOperation WHERE Day = @day";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@day", day);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                string openingTime = reader.GetString(0);
+                string closingTime = reader.GetString(1);
+                connection.Close();
+                return (openingTime, closingTime);
+            }
+        }
     }
+
+    
 }

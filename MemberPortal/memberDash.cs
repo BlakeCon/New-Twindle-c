@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace gym_c__thing.MemberPortal
 {
@@ -20,6 +22,8 @@ namespace gym_c__thing.MemberPortal
         public int membersInGym;
         public bool startingNumber;
         public bool checkedInGym;
+        string timeFormat = "HH:mm";
+
 
         public memberDash()
         {
@@ -40,7 +44,7 @@ namespace gym_c__thing.MemberPortal
             Random random = new Random();
             int randomNumber = random.Next(101);
             progressBarUpdate(randomNumber);
-            
+
 
 
 
@@ -52,18 +56,49 @@ namespace gym_c__thing.MemberPortal
             (string usrNotused, string memberType, string email, string name, int id) = dbManagerClass.GetMemberInfoUsername(username);
 
             lbl_memberType.Text = memberType;
-            lbl_ID.Text = id.ToString();
+            lbl_Id.Text = id.ToString();
 
-            if (email == "Email not avalible") 
+            if (email == "Email not avalible")
             {
                 MessageBox.Show("Remember to add your Email by using the 'Billing' page or asking a staff member!", "Missing Email!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            if (name == "Name not avalible") 
+            if (name == "Name not avalible")
             {
                 MessageBox.Show("Remember to add your Name by using the 'Billing' page or asking a staff member!", "Missing Name!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             }
+
+            //closingChecks();
         }
+
+        private void closingChecks() 
+        {
+            string dayFormat = "ddd";
+            var today = DateTime.Now.ToString(dayFormat);
+
+            dbManagerClass dbManagerClass = new dbManagerClass();
+            (string openingTime, string closingTime) = dbManagerClass.getHours(today);
+
+            DateTime currentTime = DateTime.ParseExact(DateTime.Now.ToString(timeFormat), timeFormat, CultureInfo.InvariantCulture);
+            DateTime closingTimeParsed = DateTime.ParseExact(closingTime, timeFormat, CultureInfo.InvariantCulture);
+
+            if (currentTime > closingTimeParsed || closingTime == "Closed")
+            {
+                lbl_openStatus.Text = "We are now : CLOSED!";
+            }
+            else
+            {
+                lbl_openStatus.Text = "We are now: OPEN!";
+            }
+            
+            lbl_closingTimeToday.Text = closingTime;
+            lbl_openingTimeToday.Text = openingTime;
+
+        }
+
+
+
+
 
         private void progressBarUpdate(int value)
         {
@@ -163,5 +198,6 @@ namespace gym_c__thing.MemberPortal
             progressBarUpdate(membersInGym - 1);
             checkedInGym = false;
         }
+
     }
 }

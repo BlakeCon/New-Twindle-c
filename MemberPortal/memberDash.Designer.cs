@@ -34,11 +34,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panl_memberDetails = new System.Windows.Forms.Panel();
             this.lbl_memberType = new System.Windows.Forms.Label();
-            this.lbl_ID = new System.Windows.Forms.Label();
+            this.lbl_Id = new System.Windows.Forms.Label();
             this.lbl_usrName = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panl_memberInGymStats = new System.Windows.Forms.Panel();
+            this.btn_checkOut = new System.Windows.Forms.Button();
+            this.btn_checkIn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,11 +62,17 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.btn_menu_logout = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
-            this.btn_checkIn = new System.Windows.Forms.Button();
-            this.btn_checkOut = new System.Windows.Forms.Button();
+            this.panl_Hours = new System.Windows.Forms.Panel();
+            this.lbl_closingTimeToday = new System.Windows.Forms.Label();
+            this.lbl_openingTimeToday = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_openStatus = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panl_memberDetails.SuspendLayout();
+            this.panl_memberInGymStats.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_menu)).BeginInit();
@@ -72,6 +80,7 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panl_Hours.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -114,19 +123,19 @@
             this.label3.Text = "Member Type:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // panel1
+            // panl_memberDetails
             // 
-            this.panel1.Controls.Add(this.lbl_memberType);
-            this.panel1.Controls.Add(this.lbl_ID);
-            this.panel1.Controls.Add(this.lbl_usrName);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(98, 59);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(445, 551);
-            this.panel1.TabIndex = 0;
+            this.panl_memberDetails.Controls.Add(this.lbl_memberType);
+            this.panl_memberDetails.Controls.Add(this.lbl_Id);
+            this.panl_memberDetails.Controls.Add(this.lbl_usrName);
+            this.panl_memberDetails.Controls.Add(this.label3);
+            this.panl_memberDetails.Controls.Add(this.label2);
+            this.panl_memberDetails.Controls.Add(this.label1);
+            this.panl_memberDetails.Controls.Add(this.pictureBox1);
+            this.panl_memberDetails.Location = new System.Drawing.Point(98, 59);
+            this.panl_memberDetails.Name = "panl_memberDetails";
+            this.panl_memberDetails.Size = new System.Drawing.Size(445, 551);
+            this.panl_memberDetails.TabIndex = 0;
             // 
             // lbl_memberType
             // 
@@ -138,15 +147,15 @@
             this.lbl_memberType.TabIndex = 6;
             this.lbl_memberType.Text = "NONE";
             // 
-            // lbl_ID
+            // lbl_Id
             // 
-            this.lbl_ID.AutoSize = true;
-            this.lbl_ID.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ID.Location = new System.Drawing.Point(262, 412);
-            this.lbl_ID.Name = "lbl_ID";
-            this.lbl_ID.Size = new System.Drawing.Size(72, 24);
-            this.lbl_ID.TabIndex = 5;
-            this.lbl_ID.Text = "NONE";
+            this.lbl_Id.AutoSize = true;
+            this.lbl_Id.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Id.Location = new System.Drawing.Point(262, 412);
+            this.lbl_Id.Name = "lbl_Id";
+            this.lbl_Id.Size = new System.Drawing.Size(72, 24);
+            this.lbl_Id.TabIndex = 5;
+            this.lbl_Id.Text = "NONE";
             // 
             // lbl_usrName
             // 
@@ -158,20 +167,42 @@
             this.lbl_usrName.TabIndex = 4;
             this.lbl_usrName.Text = "NONE";
             // 
-            // panel2
+            // panl_memberInGymStats
             // 
-            this.panel2.Controls.Add(this.btn_checkOut);
-            this.panel2.Controls.Add(this.btn_checkIn);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.progressBar1);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.lbl_noInGym);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(677, 59);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(443, 225);
-            this.panel2.TabIndex = 1;
+            this.panl_memberInGymStats.Controls.Add(this.btn_checkOut);
+            this.panl_memberInGymStats.Controls.Add(this.btn_checkIn);
+            this.panl_memberInGymStats.Controls.Add(this.label7);
+            this.panl_memberInGymStats.Controls.Add(this.progressBar1);
+            this.panl_memberInGymStats.Controls.Add(this.label6);
+            this.panl_memberInGymStats.Controls.Add(this.lbl_noInGym);
+            this.panl_memberInGymStats.Controls.Add(this.label5);
+            this.panl_memberInGymStats.Controls.Add(this.label4);
+            this.panl_memberInGymStats.Location = new System.Drawing.Point(677, 59);
+            this.panl_memberInGymStats.Name = "panl_memberInGymStats";
+            this.panl_memberInGymStats.Size = new System.Drawing.Size(443, 225);
+            this.panl_memberInGymStats.TabIndex = 1;
+            // 
+            // btn_checkOut
+            // 
+            this.btn_checkOut.BackColor = System.Drawing.Color.Red;
+            this.btn_checkOut.Location = new System.Drawing.Point(157, 175);
+            this.btn_checkOut.Name = "btn_checkOut";
+            this.btn_checkOut.Size = new System.Drawing.Size(139, 26);
+            this.btn_checkOut.TabIndex = 8;
+            this.btn_checkOut.Text = "Check Out";
+            this.btn_checkOut.UseVisualStyleBackColor = false;
+            this.btn_checkOut.Click += new System.EventHandler(this.btn_checkOut_Click);
+            // 
+            // btn_checkIn
+            // 
+            this.btn_checkIn.BackColor = System.Drawing.Color.Lime;
+            this.btn_checkIn.Location = new System.Drawing.Point(157, 143);
+            this.btn_checkIn.Name = "btn_checkIn";
+            this.btn_checkIn.Size = new System.Drawing.Size(139, 26);
+            this.btn_checkIn.TabIndex = 7;
+            this.btn_checkIn.Text = "Check In";
+            this.btn_checkIn.UseVisualStyleBackColor = false;
+            this.btn_checkIn.Click += new System.EventHandler(this.btn_checkIn_Click);
             // 
             // label7
             // 
@@ -390,27 +421,89 @@
             this.sidebarTimer.Interval = 10;
             this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
             // 
-            // btn_checkIn
+            // panl_Hours
             // 
-            this.btn_checkIn.BackColor = System.Drawing.Color.Lime;
-            this.btn_checkIn.Location = new System.Drawing.Point(157, 143);
-            this.btn_checkIn.Name = "btn_checkIn";
-            this.btn_checkIn.Size = new System.Drawing.Size(139, 26);
-            this.btn_checkIn.TabIndex = 7;
-            this.btn_checkIn.Text = "Check In";
-            this.btn_checkIn.UseVisualStyleBackColor = false;
-            this.btn_checkIn.Click += new System.EventHandler(this.btn_checkIn_Click);
+            this.panl_Hours.Controls.Add(this.lbl_closingTimeToday);
+            this.panl_Hours.Controls.Add(this.lbl_openingTimeToday);
+            this.panl_Hours.Controls.Add(this.label11);
+            this.panl_Hours.Controls.Add(this.label10);
+            this.panl_Hours.Controls.Add(this.lbl_openStatus);
+            this.panl_Hours.Controls.Add(this.label12);
+            this.panl_Hours.Controls.Add(this.label13);
+            this.panl_Hours.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panl_Hours.Location = new System.Drawing.Point(677, 385);
+            this.panl_Hours.Name = "panl_Hours";
+            this.panl_Hours.Size = new System.Drawing.Size(443, 225);
+            this.panl_Hours.TabIndex = 9;
             // 
-            // btn_checkOut
+            // lbl_closingTimeToday
             // 
-            this.btn_checkOut.BackColor = System.Drawing.Color.Red;
-            this.btn_checkOut.Location = new System.Drawing.Point(157, 175);
-            this.btn_checkOut.Name = "btn_checkOut";
-            this.btn_checkOut.Size = new System.Drawing.Size(139, 26);
-            this.btn_checkOut.TabIndex = 8;
-            this.btn_checkOut.Text = "Check Out";
-            this.btn_checkOut.UseVisualStyleBackColor = false;
-            this.btn_checkOut.Click += new System.EventHandler(this.btn_checkOut_Click);
+            this.lbl_closingTimeToday.AutoSize = true;
+            this.lbl_closingTimeToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_closingTimeToday.Location = new System.Drawing.Point(273, 108);
+            this.lbl_closingTimeToday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_closingTimeToday.Name = "lbl_closingTimeToday";
+            this.lbl_closingTimeToday.Size = new System.Drawing.Size(63, 20);
+            this.lbl_closingTimeToday.TabIndex = 11;
+            this.lbl_closingTimeToday.Text = "HH:mm";
+            // 
+            // lbl_openingTimeToday
+            // 
+            this.lbl_openingTimeToday.AutoSize = true;
+            this.lbl_openingTimeToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_openingTimeToday.Location = new System.Drawing.Point(273, 71);
+            this.lbl_openingTimeToday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_openingTimeToday.Name = "lbl_openingTimeToday";
+            this.lbl_openingTimeToday.Size = new System.Drawing.Size(63, 20);
+            this.lbl_openingTimeToday.TabIndex = 10;
+            this.lbl_openingTimeToday.Text = "HH:mm";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(16, 108);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(150, 20);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Closing Time Today:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(16, 71);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(158, 20);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Opening Time Today:";
+            // 
+            // lbl_openStatus
+            // 
+            this.lbl_openStatus.AutoSize = true;
+            this.lbl_openStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_openStatus.Location = new System.Drawing.Point(153, 3);
+            this.lbl_openStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_openStatus.Name = "lbl_openStatus";
+            this.lbl_openStatus.Size = new System.Drawing.Size(144, 20);
+            this.lbl_openStatus.TabIndex = 7;
+            this.lbl_openStatus.Text = "We are now : Open";
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 23);
+            this.label12.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(0, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 23);
+            this.label13.TabIndex = 0;
             // 
             // memberDash
             // 
@@ -418,17 +511,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panl_Hours);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panl_memberInGymStats);
+            this.Controls.Add(this.panl_memberDetails);
             this.Name = "memberDash";
             this.Text = "memberDash";
             this.Load += new System.EventHandler(this.memberDash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panl_memberDetails.ResumeLayout(false);
+            this.panl_memberDetails.PerformLayout();
+            this.panl_memberInGymStats.ResumeLayout(false);
+            this.panl_memberInGymStats.PerformLayout();
             this.sidebar.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -437,6 +531,8 @@
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.panl_Hours.ResumeLayout(false);
+            this.panl_Hours.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -447,11 +543,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panl_memberDetails;
         private System.Windows.Forms.Label lbl_memberType;
-        private System.Windows.Forms.Label lbl_ID;
+        private System.Windows.Forms.Label lbl_Id;
         private System.Windows.Forms.Label lbl_usrName;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panl_memberInGymStats;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ProgressBar progressBar1;
@@ -475,5 +571,13 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btn_checkIn;
         private System.Windows.Forms.Button btn_checkOut;
+        private System.Windows.Forms.Panel panl_Hours;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_openStatus;
+        private System.Windows.Forms.Label lbl_closingTimeToday;
+        private System.Windows.Forms.Label lbl_openingTimeToday;
+        private System.Windows.Forms.Label label11;
     }
 }
