@@ -122,6 +122,12 @@
     <Compile Include="MemberPortal\memberEvents.Designer.cs">
       <DependentUpon>memberEvents.cs</DependentUpon>
     </Compile>
+    <Compile Include="MemberPortal\memberStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberPortal\memberStats.Designer.cs">
+      <DependentUpon>memberStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaffPortal\manageEvents.cs">
@@ -147,6 +153,12 @@
     </Compile>
     <Compile Include="StaffPortal\memberViewerStaff.Designer.cs">
       <DependentUpon>memberViewerStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffPortal\reportsLive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffPortal\reportsLive.Designer.cs">
+      <DependentUpon>reportsLive.cs</DependentUpon>
     </Compile>
     <Compile Include="StaffPortal\staffDash.cs">
       <SubType>Form</SubType>

@@ -407,7 +407,7 @@
             this.btn_menu_logout.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_menu_logout.Image = ((System.Drawing.Image)(resources.GetObject("btn_menu_logout.Image")));
             this.btn_menu_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_menu_logout.Location = new System.Drawing.Point(-3, -8);
+            this.btn_menu_logout.Location = new System.Drawing.Point(-5, -8);
             this.btn_menu_logout.Name = "btn_menu_logout";
             this.btn_menu_logout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_menu_logout.Size = new System.Drawing.Size(282, 85);

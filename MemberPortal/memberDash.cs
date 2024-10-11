@@ -16,10 +16,14 @@ namespace gym_c__thing.MemberPortal
 {
     public partial class memberDash : Form
     {
+        Random random = new Random();
         bool sidebarExpand;
         public static memberDash instance;
         public string username;
-        public int membersInGym;
+        //The 50 should be a temp starting number, this will be replaced with a database call to get the current number of members in the gym
+        public int membersInGym = 50;
+        //The capasity should be a temp starting number, this will be replaced with a database call to get the capasity of the gym
+        public int capasity = 100;
         public bool startingNumber;
         public bool checkedInGym;
         string timeFormat = "HH:mm";
@@ -40,11 +44,8 @@ namespace gym_c__thing.MemberPortal
         private void memberDash_Load(object sender, EventArgs e)
         {
 
-            //Generates a random starting number for the progress bar
-            Random random = new Random();
-            int randomNumber = random.Next(101);
-            progressBarUpdate(randomNumber);
 
+            progressBarUpdate(membersInGym);
 
 
 
@@ -100,19 +101,19 @@ namespace gym_c__thing.MemberPortal
 
 
 
-        private void progressBarUpdate(int value)
+        private void progressBarUpdate(int InGym)
         {
-            if (value > 90)
+            int capasityUsage = (InGym / capasity) * 100;
+            if (capasityUsage > 90)
             {
                 progressBar1.BackColor = Color.Yellow;
             }
-            if (value > 99)
+            if (capasityUsage > 99)
             {
                 progressBar1.BackColor = Color.Red;
             }
-            lbl_noInGym.Text = value.ToString();
-            progressBar1.Value = value;
-            membersInGym = value;
+            lbl_noInGym.Text = InGym.ToString();
+            progressBar1.Value = capasityUsage;
         }
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
@@ -149,7 +150,8 @@ namespace gym_c__thing.MemberPortal
                 DialogResult result = MessageBox.Show("Do you want to check out?", "Check Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    progressBarUpdate(membersInGym - 1);
+                    membersInGym -= 1;
+                    progressBarUpdate(membersInGym);
                     checkedInGym = false;
                 }
             }
@@ -184,7 +186,8 @@ namespace gym_c__thing.MemberPortal
                 MessageBox.Show("The gym is currently at capasity! Please come back later", "Gym Full!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            progressBarUpdate(membersInGym + 1);
+            membersInGym +=1;
+            progressBarUpdate(membersInGym);
             checkedInGym = true;
         }
 
@@ -195,7 +198,8 @@ namespace gym_c__thing.MemberPortal
                 MessageBox.Show("You're not checked in!", "Not Checked In", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            progressBarUpdate(membersInGym - 1);
+            membersInGym -= 1;
+            progressBarUpdate(membersInGym);
             checkedInGym = false;
         }
 
