@@ -12,11 +12,14 @@ namespace gym_c__thing.Classes
     {
         private string connectionString;
 
+        //Defines the connection string to the databas and initializes it so it is not repeated in every method.
         public staffDbManager()
         {
             connectionString = "Data Source=localhost;Initial Catalog=newTwindleDB;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; // Initialize the connection string here
         }
 
+        //Compares the credentials of the staff member to the database.
+        //This could just use the one in the dbManagerClass, but I wanted to keep them separate for now.
         public bool CompareCredentials(string username, string password)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -34,14 +37,17 @@ namespace gym_c__thing.Classes
             }
         }
 
+        //Returns the name, position, and permisions of the staff member using the staff ID
         public (string, string, bool, bool) GetStaffInfo(string ID)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                //Gets all relevent staff information from the database using the ID
                 string query = "SELECT Name, Position, MakeEvents, SuperUser FROM StaffInfo WHERE Id = @Id";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Id", ID);
 
+                //Reads the data and gives each value to a variable (Actually set to the correct datatypes too!) to be returned.
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 reader.Read();
@@ -55,10 +61,12 @@ namespace gym_c__thing.Classes
             }
         }
 
+        //Honestly need to move this to a new events class, "but I'm lazy" - VS auto comment 2024
         public int getLatesEventID()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                //Selects the highest ID from the Events table
                 string query = "SELECT MAX(Id) FROM Events";
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -70,24 +78,32 @@ namespace gym_c__thing.Classes
             }
         }
 
+        //Removes an event from the database using the event ID
+        //Unsure if to move this to another class or leave it here because it is a staff function.
         public bool RemoveEvent(int Id) {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                //Deletes the record from the Events table using the ID
                 string query = "DELETE FROM Events WHERE Id = @ID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ID", Id);
 
                 connection.Open();
+                //This count returns the number of rows affected by the query, NOT true or false. 
                 int count = command.ExecuteNonQuery();
                 connection.Close();
 
+                //if more than 0 rows are affected, it will return true, meaning the event was removed.
                 return count > 0;
             }
         }
 
+        //Adds an event to the database using the event ID, name, info and expiry date as identifiers..
+        //Unsure if to move this to another class or leave it here because it is a staff function.
         public bool AddEvent(int Id, string name, string info, string expiry) {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                //Makes a new record to insert into the Events table using the ID, name, info and expiry date.
                 string query = "INSERT INTO Events (Id, EventName, EventInfo, expiry) VALUES (@ID, @Name, @Info, @Expiry)";
                 SqlCommand command = new SqlCommand(query, connection);
                 
@@ -97,9 +113,10 @@ namespace gym_c__thing.Classes
                 command.Parameters.AddWithValue("@Expiry", expiry);
                 
                 connection.Open();
+                //This count returns the number of rows affected by the query, NOT true or false.
                 int count = command.ExecuteNonQuery();
                 connection.Close();
-                
+                //if more than 0 rows are affected, it will return true, meaning the event was added.
                 return count > 0;
 
             }
