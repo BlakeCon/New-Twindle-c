@@ -19,8 +19,10 @@ namespace gym_c__thing.MemberPortal
             InitializeComponent();
         }
 
+        //Method called when the form is loaded
         private void memberBilling_Load(object sender, EventArgs e)
         {
+            // Gets the username from the memberDash instance, and sets up the variables reasy to be written to the textboxes.
             string search = memberDash.instance.username;
             string email = null;
             string username = null;
@@ -28,13 +30,14 @@ namespace gym_c__thing.MemberPortal
             string name = null;
             int id = 0;
 
-
+            //Creates a new instance of the dbManagerClass
             dbManagerClass dbManagerClass = new dbManagerClass();
 
            
             //Returns the username, memberType, email, name and id of the member using the username
             (username, memberType, email, name, id) = dbManagerClass.GetMemberInfoUsername(search);
 
+            //Writes the information to the textboxes
             txt_email.Text = email;
             txt_id.Text = id.ToString();
             txt_name.Text = name;
@@ -42,6 +45,7 @@ namespace gym_c__thing.MemberPortal
             txt_usrname.Text = username;
         }
 
+        //Goes back to previous form. 
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Close();

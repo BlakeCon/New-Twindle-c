@@ -99,7 +99,6 @@
             this.label1.Size = new System.Drawing.Size(132, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Username: ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -191,7 +190,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "memberLogin";
             this.Text = "memberLogin";
-            this.Load += new System.EventHandler(this.memberLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

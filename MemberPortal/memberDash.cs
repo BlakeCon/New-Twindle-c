@@ -103,7 +103,8 @@ namespace gym_c__thing.MemberPortal
 
         private void progressBarUpdate(int InGym)
         {
-            int capasityUsage = (InGym / capasity) * 100;
+            //Rounds it as a float to 1 decimal place and that cant be used for progress bar values. 
+            float capasityUsage = (float)Math.Round(((float)InGym / capasity) * 100, 1);
             if (capasityUsage > 90)
             {
                 progressBar1.BackColor = Color.Yellow;
@@ -113,7 +114,7 @@ namespace gym_c__thing.MemberPortal
                 progressBar1.BackColor = Color.Red;
             }
             lbl_noInGym.Text = InGym.ToString();
-            progressBar1.Value = capasityUsage;
+            progressBar1.Value = (int)capasityUsage;
         }
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
