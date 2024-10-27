@@ -44,7 +44,6 @@ namespace gym_c__thing.MemberPortal
         private void memberDash_Load(object sender, EventArgs e)
         {
 
-
             progressBarUpdate(membersInGym);
 
 
@@ -97,31 +96,24 @@ namespace gym_c__thing.MemberPortal
 
         }
 
-
-
-
-
         private void progressBarUpdate(int InGym)
         {
             //Rounds it as a float to 1 decimal place and that cant be used for progress bar values. 
             float capasityUsage = (float)Math.Round(((float)InGym / capasity) * 100, 1);
-            if (capasityUsage > 90)
-            {
-                progressBar1.BackColor = Color.Yellow;
-            }
-            if (capasityUsage > 99)
-            {
-                progressBar1.BackColor = Color.Red;
-            }
+            //Add code to change colour here//
+            //updates the lable and the progress bar with new value. 
             lbl_noInGym.Text = InGym.ToString();
             progressBar1.Value = (int)capasityUsage;
         }
 
+        //Method that is called every tick of a timer.
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
+            //Adds or removes width dependant on if the sidebar is expanded or not.
             if (sidebarExpand)
             {
                 sidebar.Width -= 10;
+                //When the sidebar had reached the minimum size, it will swap the boolean and stop the timer.
                 if (sidebar.Width == sidebar.MinimumSize.Width)
                 {
                     sidebarExpand = false;
@@ -139,15 +131,18 @@ namespace gym_c__thing.MemberPortal
             }
         }
 
+        //When the menu button is clicked it starts the timer for the sidebar to expand or contract..
         private void btn_menu_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
         }
 
+        //Method called when the logout button is clicked.
         private void btn_menu_logout_Click(object sender, EventArgs e)
         {
-            if (checkedInGym)
+            //Does a check if the member is still checked in. 
             {
+                //Message box that asks if the user wants to check out. If they do it will remove 1 from the members in gym and update the progress bar.
                 DialogResult result = MessageBox.Show("Do you want to check out?", "Check Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
@@ -156,11 +151,13 @@ namespace gym_c__thing.MemberPortal
                     checkedInGym = false;
                 }
             }
-            memberLogin.instnace.Close();
+
+            //Closes the current form and shows the main form.
             this.Close();
             Form1.instance.Show();
         }
 
+        //Opens the events form and closes the current form.
         private void btn_menu_events_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -168,6 +165,7 @@ namespace gym_c__thing.MemberPortal
             memberEvents.Show();
         }
 
+        //Opens the billing form and closes the current form.
         private void btn_billing_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -175,30 +173,37 @@ namespace gym_c__thing.MemberPortal
             memberBilling.Show();
         }
 
+        //method called when the check in button is clicked.
         private void btn_checkIn_Click(object sender, EventArgs e)
         {
+            //Checks if the user is already checked in, if they are it will show a message box and return.
             if (checkedInGym)
             {
                 MessageBox.Show("You're already checked in!", "Checked In", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            //Checks if the gym is at capasity, if it is it will show a message box and return.
             if(membersInGym == 100)
             {
                 MessageBox.Show("The gym is currently at capasity! Please come back later", "Gym Full!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            //If the user is not checked in and the gym is not at capasity, it will add 1 to the members in gym and update the progress bar.
             membersInGym +=1;
             progressBarUpdate(membersInGym);
             checkedInGym = true;
         }
 
+        //method called when the check out button is clicked.
         private void btn_checkOut_Click(object sender, EventArgs e)
         {
+            //Checks if the user is checked in, if they are not it will show a message box and return.
             if (!checkedInGym)
             {
                 MessageBox.Show("You're not checked in!", "Not Checked In", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            //If the user is checked in, it will remove 1 from the members in gym and update the progress bar.
             membersInGym -= 1;
             progressBarUpdate(membersInGym);
             checkedInGym = false;
