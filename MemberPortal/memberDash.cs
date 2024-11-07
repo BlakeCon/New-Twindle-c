@@ -20,9 +20,9 @@ namespace gym_c__thing.MemberPortal
         bool sidebarExpand;
         public static memberDash instance;
         public string username;
-        //The 50 should be a temp starting number, this will be replaced with a database call to get the current number of members in the gym
+        //The 50 should be a temp starting number, this will be replaced with a database call to get the current number of members in the gym.
         public int membersInGym = 50;
-        //The capasity should be a temp starting number, this will be replaced with a database call to get the capasity of the gym
+        //The capasity should be a temp starting number, this will be replaced with a database call to get the capasity of the gym.
         public int capasity = 100;
         public bool startingNumber;
         public bool checkedInGym;
