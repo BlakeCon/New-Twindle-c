@@ -175,6 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.colour);
             this.Controls.Add(this.chbox_showPassword);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_clear);
@@ -213,5 +214,6 @@
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.CheckBox chbox_showPassword;
+        private System.Windows.Forms.Button colour;
     }
 }

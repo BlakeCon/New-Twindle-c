@@ -81,5 +81,6 @@ namespace gym_c__thing.Logins
                 txt_password.UseSystemPasswordChar = true;
             }
         }
+
     }
 }

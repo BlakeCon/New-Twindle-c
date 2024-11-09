@@ -80,12 +80,6 @@
     <Compile Include="Classes\dbManager.cs" />
     <Compile Include="Classes\dbRegistrationManager.cs" />
     <Compile Include="Classes\staffDbManager.cs" />
-    <Compile Include="credits.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="credits.Designer.cs">
-      <DependentUpon>credits.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,9 +166,6 @@
     <Compile Include="StaffPortal\staffDash.Designer.cs">
       <DependentUpon>staffDash.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="credits.resx">
-      <DependentUpon>credits.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

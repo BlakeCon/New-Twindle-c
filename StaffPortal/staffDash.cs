@@ -50,12 +50,6 @@ namespace gym_c__thing.StaffPortal
             }
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Form1.instance.Show();
-        }
-
         private void btn_manageUser_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -93,6 +87,32 @@ namespace gym_c__thing.StaffPortal
             {
                 MessageBox.Show("You do not have permission to access this page");
             }
+        }
+
+        private void btn_menu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_manageEvents_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_stats_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_logout_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1.instance.Show();
         }
     }
 }
